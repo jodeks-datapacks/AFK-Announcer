@@ -1,0 +1,18 @@
+{
+  "display": {
+      "icon": {
+          "item": "minecraft:dead_bush"
+      },
+      "title": "AFK Announcer",
+      "description": "Displays players that are afk as afk",
+      "frame": "task",
+      "show_toast": false,
+      "announce_to_chat": false
+  },
+  "parent": "jodek:root",
+  "criteria": {
+      "tick": {
+          "trigger": "minecraft:tick"
+      }
+  }
+}
