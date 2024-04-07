@@ -26,14 +26,31 @@ scoreboard objectives add afkannouncer.rotation.y.last dummy
 scoreboard objectives add afkannouncer.sneak_time custom:sneak_time
 
 
+scoreboard objectives add set_afk_timer trigger
+
+scoreboard objectives add afkannouncer.set_afk_timer_ticks dummy
+scoreboard players set #20 afkannouncer.set_afk_timer_ticks 20
+
 # team to display next to name
 team add afk_team
 team modify afk_team color gray
 team modify afk_team suffix {"text":" [AFK]","color":"dark_gray"}
 team modify afk_team collisionRule never
 
-scoreboard players set $afk_enabled afk_datapack_detected 1
+team add afk_overworld
+team modify afk_overworld color gray
+team modify afk_overworld prefix [{"text":"Overworld","color":"green"},{"text":" | ","color":"dark_gray"}]
+team modify afk_overworld suffix {"text":" [AFK]","color":"dark_gray"}
+team modify afk_overworld collisionRule never
 
-scoreboard objectives add sdin_datapack_detected dummy
-scoreboard players set $sdin_enabled sdin_datapack_detected 0
+team add afk_nether
+team modify afk_nether color gray
+team modify afk_nether prefix [{"text":"Nether","color":"red"},{"text":" | ","color":"dark_gray"}]
+team modify afk_nether suffix {"text":" [AFK]","color":"dark_gray"}
+team modify afk_nether collisionRule never
 
+team add afk_end
+team modify afk_end color gray
+team modify afk_end prefix [{"text":"End","color":"dark_purple"},{"text":" | ","color":"dark_gray"}]
+team modify afk_end suffix {"text":" [AFK]","color":"dark_gray"}
+team modify afk_end collisionRule never
