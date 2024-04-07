@@ -32,13 +32,13 @@ execute as @a store result score @s afkannouncer.rotation.y.last run data get en
 scoreboard players set @a afkannouncer.sneak_time 0
 
 
-execute as @a as @s[scores={afkannouncer.afk_time=200..},tag=!afk] run function afkannouncer:announce_afk
-execute as @a as @s[scores={afkannouncer.afk_time=200}] run tag @s add afk
+execute as @a at @s[scores={afkannouncer.afk_time=200..},tag=!afkannouncer.afk] run function afkannouncer:announce_afk
+execute as @a at @s[scores={afkannouncer.afk_time=200..}] run tag @s add afkannouncer.afk
 
-execute as @a as @s[tag=afk] run function afkannouncer:join_team_afk
+execute as @a[tag=afkannouncer.afk] run function afkannouncer:join_team_afk
+execute as @a[tag=!afkannouncer.afk] run function afkannouncer:leave_team_afk
+
+execute as @a at @s[tag=afkannouncer.afk,scores={afkannouncer.afk_time=0}] run function afkannouncer:announce_return
+execute as @a at @s[scores={afkannouncer.afk_time=0}] run tag @s remove afkannouncer.afk
 
 
-execute as @a as @s[tag=afk,scores={afkannouncer.afk_time=0}] run function afkannouncer:announce_return
-execute as @a as @s[scores={afkannouncer.afk_time=0}] run tag @s remove afk
-
-execute as @a as @s[tag=!afk] run function afkannouncer:leave_team_afk
