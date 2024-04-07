@@ -34,4 +34,5 @@ team modify afk_team suffix {"text":" [AFK]","color":"dark_gray"}
 scoreboard players set $afk_enabled afk_datapack_detected 1
 
 scoreboard objectives add sdin_datapack_detected dummy
+scoreboard players set $sdin_enabled sdin_datapack_detected 0
 

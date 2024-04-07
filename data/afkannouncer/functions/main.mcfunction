@@ -21,6 +21,7 @@ scoreboard players set @a[tag=!afkannouncer.sneak_time.not_changing] afkannounce
 scoreboard players add @a[tag=afkannouncer.position.x.not_moving,tag=afkannouncer.position.y.not_moving,tag=afkannouncer.position.z.not_moving,tag=afkannouncer.rotation.x.not_moving,tag=afkannouncer.rotation.y.not_moving,tag=afkannouncer.sneak_time.not_changing] afkannouncer.afk_time 1 
 
 
+
 execute as @a store result score @s afkannouncer.position.x.last run data get entity @s Pos[0] 10000
 execute as @a store result score @s afkannouncer.position.y.last run data get entity @s Pos[1] 10000
 execute as @a store result score @s afkannouncer.position.z.last run data get entity @s Pos[2] 10000
