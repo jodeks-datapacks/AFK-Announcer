@@ -30,6 +30,7 @@ scoreboard objectives add afkannouncer.sneak_time custom:sneak_time
 team add afk_team
 team modify afk_team color gray
 team modify afk_team suffix {"text":" [AFK]","color":"dark_gray"}
+team modify afk_team collisionRule never
 
 scoreboard players set $afk_enabled afk_datapack_detected 1
 
