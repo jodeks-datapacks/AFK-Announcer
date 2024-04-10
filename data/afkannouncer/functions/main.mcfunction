@@ -1,4 +1,4 @@
-execute as @a unless score @s set_afk_timer = @s set_afk_timer run scoreboard players set @s set_afk_timer 4800
+execute as @a unless score @s set_afk_timer = @s set_afk_timer run scoreboard players set @s set_afk_timer 300
 scoreboard players enable @a set_afk_timer
 
 tag @a remove afkannouncer.position.x.not_moving
