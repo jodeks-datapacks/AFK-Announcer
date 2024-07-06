@@ -1,1 +1,0 @@
-team join afk_team @s
