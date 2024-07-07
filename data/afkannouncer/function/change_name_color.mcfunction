@@ -18,7 +18,6 @@ execute if score &name_color name_color.jodek matches 14 run team modify basic c
 execute if score &name_color name_color.jodek matches 15 run team modify basic color white
 execute if score &name_color name_color.jodek matches 16 run team modify basic color yellow
 
-
 execute if score &name_color_afk name_color.jodek matches 1 run team modify afk_team color aqua
 execute if score &name_color_afk name_color.jodek matches 2 run team modify afk_team color black
 execute if score &name_color_afk name_color.jodek matches 3 run team modify afk_team color blue
@@ -36,6 +35,10 @@ execute if score &name_color_afk name_color.jodek matches 14 run team modify afk
 execute if score &name_color_afk name_color.jodek matches 15 run team modify afk_team color white
 execute if score &name_color_afk name_color.jodek matches 16 run team modify afk_team color yellow
 
+execute if score &suffix_color_afk name_color.jodek matches 6 run team modify afk_team suffix [{"text":" [AFK]","color":"dark_gray"}]
+execute if score &suffix_color_afk name_color.jodek matches 7 run team modify afk_team suffix [{"text":" [AFK]","color":"dark_green"}]
+execute if score &suffix_color_afk name_color.jodek matches 8 run team modify afk_team suffix [{"text":" [AFK]","color":"dark_purple"}]
+execute if score &suffix_color_afk name_color.jodek matches 9 run team modify afk_team suffix [{"text":" [AFK]","color":"dark_red"}]
 
 execute if score &name_color_afk_overworld name_color.jodek matches 1 run team modify afk_overworld color aqua
 execute if score &name_color_afk_overworld name_color.jodek matches 2 run team modify afk_overworld color black

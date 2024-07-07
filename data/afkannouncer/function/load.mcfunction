@@ -1,4 +1,4 @@
-tellraw @a ["",{"text":"AFK Announcer ","color":"blue","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"loaded - ","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"[1.21]","color":"green","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":" ","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"v.2.1.0","color":"dark_green","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}}]
+tellraw @a ["",{"text":"AFK Announcer ","color":"blue","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"loaded - ","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"[1.21]","color":"green","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":" ","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"v.2.1.1","color":"dark_green","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}}]
 
 # scoreboard for tracking afk time
 scoreboard players set @a afkannouncer.afk_time 0
@@ -79,9 +79,7 @@ execute as @a unless score &name_color name_color.jodek = &name_color name_color
 # afk name color for afk team
 execute as @a unless score &name_color_afk name_color.jodek = &name_color_afk name_color.jodek run scoreboard players set &name_color_afk name_color.jodek 11
 
-execute as @a unless score &name_color_afk_overworld name_color.jodek = &name_color_afk_overworld name_color.jodek run scoreboard players set &name_color_afk_overworld name_color.jodek 11
-execute as @a unless score &name_color_afk_nether name_color.jodek = &name_color_afk_nether name_color.jodek run scoreboard players set &name_color_afk_nether name_color.jodek 11
-execute as @a unless score &name_color_afk_end name_color.jodek = &name_color_afk_end name_color.jodek run scoreboard players set &name_color_afk_end name_color.jodek 11
+execute as @a unless score &suffix_color_afk name_color.jodek = &suffix_color_afk name_color.jodek run scoreboard players set &suffix_color_afk name_color.jodek 6
 
 # loop function for name change check
 schedule function afkannouncer:change_name_color 2s
@@ -89,6 +87,10 @@ schedule function afkannouncer:change_name_color 2s
 # loop function for afk_invulnerable setting check
 schedule function afkannouncer:afk_invulnerable 1s
 
+
+execute as @a unless score &name_color_afk_overworld name_color.jodek = &name_color_afk_overworld name_color.jodek run scoreboard players set &name_color_afk_overworld name_color.jodek 11
+execute as @a unless score &name_color_afk_nether name_color.jodek = &name_color_afk_nether name_color.jodek run scoreboard players set &name_color_afk_nether name_color.jodek 11
+execute as @a unless score &name_color_afk_end name_color.jodek = &name_color_afk_end name_color.jodek run scoreboard players set &name_color_afk_end name_color.jodek 11
 
 execute as @a unless score &prefix_color_afk_overworld name_color.jodek = &prefix_color_afk_overworld name_color.jodek run scoreboard players set &prefix_color_afk_overworld name_color.jodek 12
 execute as @a unless score &prefix_color_afk_nether name_color.jodek = &prefix_color_afk_nether name_color.jodek run scoreboard players set &prefix_color_afk_nether name_color.jodek 14
