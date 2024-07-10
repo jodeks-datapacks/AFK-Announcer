@@ -4,7 +4,8 @@ tag @a remove afk
 
 scoreboard objectives remove afkannouncer.afk_time 
 
-# create check movement scoreboards
+scoreboard objectives remove afk_timer
+
 scoreboard objectives remove afkannouncer.position.x 
 scoreboard objectives remove afkannouncer.position.x.last 
 
@@ -23,8 +24,22 @@ scoreboard objectives remove afkannouncer.rotation.y.last
 
 scoreboard objectives remove afkannouncer.sneak_time 
 
+tag @a remove AFKAnnouncer
 
-scoreboard objectives remove sdin_datapack_detected 
+scoreboard objectives remove check.afk_announcer
 
-datapack disable "file/AFK Announcer"
+scoreboard objectives remove afk_announcer.config
 
+scoreboard objectives remove name_color.jodek
+
+scoreboard objectives remove afk
+
+scoreboard objectives remove afk_notification
+
+scoreboard objectives remove help.afk_announcer
+
+advancement revoke @a only jodek:afk_announcer
+advancement revoke @a only jodek:utility
+advancement revoke @a only jodek:root
+
+tellraw @s ["",{"text":"Uninstall"},{"text":" successful!"}] 
