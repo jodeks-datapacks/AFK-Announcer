@@ -1,5 +1,3 @@
-datapack disable "file/AFK Announcer"
-
 team remove afk_team
 
 tag @a remove afk
@@ -8,7 +6,6 @@ scoreboard objectives remove afkannouncer.afk_time
 
 scoreboard objectives remove afk_timer
 
-# create check movement scoreboards
 scoreboard objectives remove afkannouncer.position.x 
 scoreboard objectives remove afkannouncer.position.x.last 
 
@@ -41,7 +38,8 @@ scoreboard objectives remove afk_notification
 
 scoreboard objectives remove help.afk_announcer
 
-
 advancement revoke @a only jodek:afk_announcer
 advancement revoke @a only jodek:utility
 advancement revoke @a only jodek:root
+
+tellraw @s ["",{"text":"Uninstall"},{"text":" successful!"}] 
