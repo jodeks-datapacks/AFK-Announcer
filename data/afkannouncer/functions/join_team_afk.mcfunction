@@ -1,1 +1,1 @@
-team join afk_team @s
+team join afk_team @s[type=!parrot,type=!wolf,type=!cat,type=!horse,type=!donkey,type=!llama,type=!mule]

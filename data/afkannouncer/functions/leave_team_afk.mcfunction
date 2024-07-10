@@ -1,1 +1,2 @@
-team leave @s 
+team leave @s
+team join basic @s
