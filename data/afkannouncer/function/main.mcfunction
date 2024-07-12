@@ -39,8 +39,11 @@ scoreboard players set @a afkannouncer.sneak_time 0
 scoreboard players add @a[tag=afkannouncer.position.x.not_moving,tag=afkannouncer.position.y.not_moving,tag=afkannouncer.position.z.not_moving,tag=afkannouncer.rotation.x.not_moving,tag=afkannouncer.rotation.y.not_moving,tag=afkannouncer.sneak_time.not_changing] afkannouncer.afk_time 1 
 
 # announce afk + tag player as afk
-execute as @a[tag=!afkannouncer.afk,scores={afk_timer=1..}] if score @s afkannouncer.afk_time >= @s afkannouncer.set_afk_timer_ticks run function afkannouncer:announce_afk
-execute as @a[scores={afk_timer=1..}] if score @s afkannouncer.afk_time >= @s afkannouncer.set_afk_timer_ticks run tag @s[tag=!trigger_afk] add afkannouncer.afk
+execute if score &afk_kick afk_announcer.config matches 1 run execute if score &afk_kick_player_control afk_announcer.config matches 1 run execute as @a[tag=!afkannouncer.afk,scores={afk_timer=1..,individual_afk_kick=0}] if score @s afkannouncer.afk_time >= @s afkannouncer.set_afk_timer_ticks run function afkannouncer:announce_afk
+execute if score &afk_kick afk_announcer.config matches 1 run execute if score &afk_kick_player_control afk_announcer.config matches 1 run execute as @a[scores={afk_timer=1..,individual_afk_kick=0}] if score @s afkannouncer.afk_time >= @s afkannouncer.set_afk_timer_ticks run tag @s[tag=!trigger_afk] add afkannouncer.afk
+
+execute unless score &afk_kick afk_announcer.config matches 1 run execute as @a[tag=!afkannouncer.afk,scores={afk_timer=1..}] if score @s afkannouncer.afk_time >= @s afkannouncer.set_afk_timer_ticks run function afkannouncer:announce_afk
+execute unless score &afk_kick afk_announcer.config matches 1 run execute as @a[scores={afk_timer=1..}] if score @s afkannouncer.afk_time >= @s afkannouncer.set_afk_timer_ticks run tag @s[tag=!trigger_afk] add afkannouncer.afk
 
 # compatibility with show dim in name
 execute as @a[tag=afkannouncer.afk,scores={afk_timer=1..}] run function afkannouncer:join_team_afk
