@@ -1,4 +1,4 @@
-tellraw @a ["",{"text":"AFK Announcer ","color":"blue","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"loaded - ","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"[1.21]","color":"green","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":" ","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"v.2.1.2","color":"dark_green","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}}]
+tellraw @a ["",{"text":"AFK Announcer ","color":"blue","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"loaded - ","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"[1.21]","color":"green","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":" ","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"v.2.2.2","color":"dark_green","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}}]
 
 # scoreboard for tracking afk time
 scoreboard players set @a afkannouncer.afk_time 0
@@ -76,18 +76,13 @@ scoreboard objectives add name_color.jodek dummy
 # basic name color for basic team - the same in every datapack that needs it
 execute as @a unless score &name_color name_color.jodek = &name_color name_color.jodek run scoreboard players set &name_color name_color.jodek 15
 
-# afk name color for afk team
+# basic afk name color for afk team
 execute as @a unless score &name_color_afk name_color.jodek = &name_color_afk name_color.jodek run scoreboard players set &name_color_afk name_color.jodek 11
 
+# basic suffix color [AFK]
 execute as @a unless score &suffix_color_afk name_color.jodek = &suffix_color_afk name_color.jodek run scoreboard players set &suffix_color_afk name_color.jodek 6
 
-# loop function for name change check
-schedule function afkannouncer:change_name_color 2s
-
-# loop function for afk_invulnerable setting check
-schedule function afkannouncer:afk_invulnerable 1s
-
-
+# basic values for color settings
 execute as @a unless score &name_color_afk_overworld name_color.jodek = &name_color_afk_overworld name_color.jodek run scoreboard players set &name_color_afk_overworld name_color.jodek 11
 execute as @a unless score &name_color_afk_nether name_color.jodek = &name_color_afk_nether name_color.jodek run scoreboard players set &name_color_afk_nether name_color.jodek 11
 execute as @a unless score &name_color_afk_end name_color.jodek = &name_color_afk_end name_color.jodek run scoreboard players set &name_color_afk_end name_color.jodek 11
@@ -100,9 +95,32 @@ execute as @a unless score &suffix_color_afk_overworld name_color.jodek = &suffi
 execute as @a unless score &suffix_color_afk_nether name_color.jodek = &suffix_color_afk_nether name_color.jodek run scoreboard players set &suffix_color_afk_nether name_color.jodek 6
 execute as @a unless score &suffix_color_afk_end name_color.jodek = &suffix_color_afk_end name_color.jodek run scoreboard players set &suffix_color_afk_end name_color.jodek 6
 
-
+# datapack show dim in name check
 scoreboard objectives add check.afk_announcer dummy
-
 execute as @a unless score &check_show_dim_in_name check.afk_announcer matches 1 run scoreboard players set &check_show_dim_in_name check.afk_announcer 0
 
+# add help scoreboard
 scoreboard objectives add help.afk_announcer trigger
+
+# setting scoreboard afk kick feature on or off
+execute as @a unless score &afk_kick afk_announcer.config = &afk_kick afk_announcer.config run scoreboard players set &afk_kick afk_announcer.config 0
+# 0 = off, 1 = on
+
+# setting scoreboard afk kick players decide or not
+execute as @a unless score &afk_kick_player_control afk_announcer.config = &afk_kick_player_control afk_announcer.config run scoreboard players set &afk_kick_player_control afk_announcer.config 0
+# 0 = off, 1 = on
+
+# add trigger scoreboard for own value
+scoreboard objectives add individual_afk_kick trigger
+# 0 = not kicked, 1 = kicked
+
+
+
+# loop function for name color setting change check
+schedule function afkannouncer:change_name_color 2s
+
+# loop function for afk_invulnerable setting change check
+schedule function afkannouncer:afk_invulnerable 1s
+
+# loop function for afk kick setting change check
+schedule function afkannouncer:afk_kick/loop_update 1s
