@@ -61,10 +61,17 @@ scoreboard players enable @a afk
 
 execute as @a if score @s afk matches 1 run function afkannouncer:trigger_afk
 
+
 scoreboard players enable @a afk_notification
+
 
 scoreboard players enable @a help.afk_announcer
 
 execute as @a if score @s help.afk_announcer matches 1 run function afkannouncer:trigger_help
+
+
+scoreboard players enable @a noafk 
+
+execute as @a if score @s noafk matches 1 run function afkannouncer:noafk
 
 
