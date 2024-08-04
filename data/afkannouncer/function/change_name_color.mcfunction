@@ -35,6 +35,7 @@ execute if score &name_color_afk name_color.jodek matches 14 run team modify afk
 execute if score &name_color_afk name_color.jodek matches 15 run team modify afk_team color white
 execute if score &name_color_afk name_color.jodek matches 16 run team modify afk_team color yellow
 
+execute if score &suffix_color_afk name_color.jodek matches 0 run team modify afk_team suffix [{"text":""}]
 execute if score &suffix_color_afk name_color.jodek matches 1 run team modify afk_team suffix [{"text":" [AFK]","color":"aqua"}]
 execute if score &suffix_color_afk name_color.jodek matches 2 run team modify afk_team suffix [{"text":" [AFK]","color":"black"}]
 execute if score &suffix_color_afk name_color.jodek matches 3 run team modify afk_team suffix [{"text":" [AFK]","color":"blue"}]
@@ -111,6 +112,7 @@ execute if score &name_color_afk_end name_color.jodek matches 16 run team modify
 # for afk announcer color compatiblity with sdin
 
 # end
+execute if score &prefix_color_afk_end name_color.jodek matches 0 run team modify afk_end prefix [{"text":""}]
 execute if score &prefix_color_afk_end name_color.jodek matches 1 run team modify afk_end prefix [{"text":"End","color":"aqua"},{"text":" | ","color":"dark_gray"}]
 execute if score &prefix_color_afk_end name_color.jodek matches 2 run team modify afk_end prefix [{"text":"End","color":"black"},{"text":" | ","color":"dark_gray"}]
 execute if score &prefix_color_afk_end name_color.jodek matches 3 run team modify afk_end prefix [{"text":"End","color":"blue"},{"text":" | ","color":"dark_gray"}]
@@ -129,6 +131,7 @@ execute if score &prefix_color_afk_end name_color.jodek matches 15 run team modi
 execute if score &prefix_color_afk_end name_color.jodek matches 16 run team modify afk_end prefix [{"text":"End","color":"yellow"},{"text":" | ","color":"dark_gray"}]
 
 # nether
+execute if score &prefix_color_afk_nether name_color.jodek matches 0 run team modify afk_nether prefix [{"text":""}]
 execute if score &prefix_color_afk_nether name_color.jodek matches 1 run team modify afk_nether prefix [{"text":"Nether","color":"aqua"},{"text":" | ","color":"dark_gray"}]
 execute if score &prefix_color_afk_nether name_color.jodek matches 2 run team modify afk_nether prefix [{"text":"Nether","color":"black"},{"text":" | ","color":"dark_gray"}]
 execute if score &prefix_color_afk_nether name_color.jodek matches 3 run team modify afk_nether prefix [{"text":"Nether","color":"blue"},{"text":" | ","color":"dark_gray"}]
@@ -147,6 +150,7 @@ execute if score &prefix_color_afk_nether name_color.jodek matches 15 run team m
 execute if score &prefix_color_afk_nether name_color.jodek matches 16 run team modify afk_nether prefix [{"text":"Nether","color":"yellow"},{"text":" | ","color":"dark_gray"}]
 
 # overworld
+execute if score &prefix_color_afk_overworld name_color.jodek matches 0 run team modify afk_overworld prefix [{"text":""}]
 execute if score &prefix_color_afk_overworld name_color.jodek matches 1 run team modify afk_overworld prefix [{"text":"Overworld","color":"aqua"},{"text":" | ","color":"dark_gray"}]
 execute if score &prefix_color_afk_overworld name_color.jodek matches 2 run team modify afk_overworld prefix [{"text":"Overworld","color":"black"},{"text":" | ","color":"dark_gray"}]
 execute if score &prefix_color_afk_overworld name_color.jodek matches 3 run team modify afk_overworld prefix [{"text":"Overworld","color":"blue"},{"text":" | ","color":"dark_gray"}]
@@ -165,6 +169,7 @@ execute if score &prefix_color_afk_overworld name_color.jodek matches 15 run tea
 execute if score &prefix_color_afk_overworld name_color.jodek matches 16 run team modify afk_overworld prefix [{"text":"Overworld","color":"yellow"},{"text":" | ","color":"dark_gray"}]
 
 # end
+execute if score &suffix_color_afk_end name_color.jodek matches 0 run team modify afk_end suffix [{"text":""}]
 execute if score &suffix_color_afk_end name_color.jodek matches 1 run team modify afk_end suffix [{"text":" [AFK]","color":"aqua"}]
 execute if score &suffix_color_afk_end name_color.jodek matches 2 run team modify afk_end suffix [{"text":" [AFK]","color":"black"}]
 execute if score &suffix_color_afk_end name_color.jodek matches 3 run team modify afk_end suffix [{"text":" [AFK]","color":"blue"}]
@@ -183,6 +188,7 @@ execute if score &suffix_color_afk_end name_color.jodek matches 15 run team modi
 execute if score &suffix_color_afk_end name_color.jodek matches 16 run team modify afk_end suffix [{"text":" [AFK]","color":"yellow"}]
 
 # nether
+execute if score &suffix_color_afk_nether name_color.jodek matches 0 run team modify afk_nether suffix [{"text":""}]
 execute if score &suffix_color_afk_nether name_color.jodek matches 1 run team modify afk_nether suffix [{"text":" [AFK]","color":"aqua"}]
 execute if score &suffix_color_afk_nether name_color.jodek matches 2 run team modify afk_nether suffix [{"text":" [AFK]","color":"black"}]
 execute if score &suffix_color_afk_nether name_color.jodek matches 3 run team modify afk_nether suffix [{"text":" [AFK]","color":"blue"}]
@@ -201,6 +207,7 @@ execute if score &suffix_color_afk_nether name_color.jodek matches 15 run team m
 execute if score &suffix_color_afk_nether name_color.jodek matches 16 run team modify afk_nether suffix [{"text":" [AFK]","color":"yellow"}]
 
 # overworld
+execute if score &suffix_color_afk_overworld name_color.jodek matches 0 run team modify afk_overworld suffix [{"text":""}]
 execute if score &suffix_color_afk_overworld name_color.jodek matches 1 run team modify afk_overworld suffix [{"text":" [AFK]","color":"aqua"}]
 execute if score &suffix_color_afk_overworld name_color.jodek matches 2 run team modify afk_overworld suffix [{"text":" [AFK]","color":"black"}]
 execute if score &suffix_color_afk_overworld name_color.jodek matches 3 run team modify afk_overworld suffix [{"text":" [AFK]","color":"blue"}]

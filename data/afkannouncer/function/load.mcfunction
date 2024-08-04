@@ -1,4 +1,4 @@
-tellraw @a ["",{"text":"AFK Announcer ","color":"blue","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"loaded - ","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"[1.21]","color":"green","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":" ","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"v.2.2.2","color":"dark_green","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}}]
+tellraw @a ["",{"text":"AFK Announcer ","color":"blue","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"loaded - ","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"[1.21]","color":"green","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":" ","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}},{"text":"v.2.3.2","color":"dark_green","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/afk-announcer"},"hoverEvent":{"action":"show_text","contents":"modrinth.com/datapack/afk-announcer"}}]
 
 # scoreboard for tracking afk time
 scoreboard players set @a afkannouncer.afk_time 0
@@ -65,9 +65,21 @@ scoreboard objectives add afk_announcer.config dummy
 
 execute as @a unless score &afk_invulnerable afk_announcer.config = &afk_invulnerable afk_announcer.config run scoreboard players set &afk_invulnerable afk_announcer.config 0
 
+# setting scoreboard afk kick feature on or off
+execute as @a unless score &afk_kick afk_announcer.config = &afk_kick afk_announcer.config run scoreboard players set &afk_kick afk_announcer.config 0
+# 0 = off, 1 = on
+
+# setting scoreboard afk kick players decide or not
+execute as @a unless score &afk_kick_player_control afk_announcer.config = &afk_kick_player_control afk_announcer.config run scoreboard players set &afk_kick_player_control afk_announcer.config 0
+# 0 = off, 1 = on
+
+
+
 #notification scoreboard
 scoreboard objectives add afk_notification trigger
 execute as @a unless entity @a[scores={afk_notification=2}] run scoreboard players set @a afk_notification 1
+
+
 
 
 # scoreboard for the name color change - is the same in every datapack that has something do to with the name color (e.g. invis player name or sdin)
@@ -102,18 +114,13 @@ execute as @a unless score &check_show_dim_in_name check.afk_announcer matches 1
 # add help scoreboard
 scoreboard objectives add help.afk_announcer trigger
 
-# setting scoreboard afk kick feature on or off
-execute as @a unless score &afk_kick afk_announcer.config = &afk_kick afk_announcer.config run scoreboard players set &afk_kick afk_announcer.config 0
-# 0 = off, 1 = on
-
-# setting scoreboard afk kick players decide or not
-execute as @a unless score &afk_kick_player_control afk_announcer.config = &afk_kick_player_control afk_announcer.config run scoreboard players set &afk_kick_player_control afk_announcer.config 0
-# 0 = off, 1 = on
 
 # add trigger scoreboard for own value
 scoreboard objectives add individual_afk_kick trigger
 # 0 = not kicked, 1 = kicked
 
+# add trigger to set afk timer to 0
+scoreboard objectives add noafk trigger
 
 
 # loop function for name color setting change check
