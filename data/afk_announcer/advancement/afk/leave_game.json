@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "trigger_afk": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:value_check",
+            "value": {
+              "type": "minecraft:score",
+              "target": {
+                "type": "minecraft:context",
+                "target": "this"
+              },
+              "score": "afk_announcer.leave_game"
+            },
+            "range": 1
+          },
+          {
+            "condition": "minecraft:value_check",
+            "value": {
+              "type": "minecraft:score",
+              "target": {
+                "type": "minecraft:fixed",
+                "name": "&leave_game_check"
+              },
+              "score": "afk_announcer.config"
+            },
+            "range": 1
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "afk_announcer:app/afk/leave_game"
+  }
+}

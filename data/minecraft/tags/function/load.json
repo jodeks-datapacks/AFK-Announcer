@@ -1,0 +1,6 @@
+{
+  "values": [
+    "afk_announcer:app/setup",
+    "afk_announcer:app/load_message"
+  ]
+}

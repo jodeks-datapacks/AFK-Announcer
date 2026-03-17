@@ -1,0 +1,47 @@
+{
+  "criteria": {
+    "trigger_afk": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:value_check",
+            "value": {
+              "type": "minecraft:score",
+              "target": {
+                "type": "minecraft:fixed",
+                "name": "&rotation_check"
+              },
+              "score": "afk_announcer.config"
+            },
+            "range": 1
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "minecraft:player",
+                  "input": {
+                    "forward": true,
+                    "backward": true,
+                    "left": true,
+                    "right": true,
+                    "jump": true,
+                    "sneak": true,
+                    "sprint": true
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "afk_announcer:app/check/rotation"
+  }
+}
