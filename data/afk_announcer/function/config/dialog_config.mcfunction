@@ -83,7 +83,10 @@ $dialog show @s {\
   columns:1,\
   actions:[\
     {\
-      label:"Save",\
+      "label": {\
+        "translate": "jodek.save",\
+        "fallback": "Save"\
+      },\
       action:{\
         type:"dynamic/run_command",\
         template:"function afk_announcer:config/save {dialog_afk_kick:$(dialog_afk_kick), dialog_time_until_afk:$(dialog_time_until_afk), dialog_screen_notification:$(dialog_screen_notification), dialog_chat_notification:$(dialog_chat_notification), dialog_rotation_check:$(dialog_rotation_check), dialog_leave_game_check:$(dialog_leave_game_check)}"\

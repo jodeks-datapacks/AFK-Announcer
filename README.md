@@ -14,6 +14,12 @@
 
 </div>
 
+<div align="center">
+
+![Shows in tab list](https://cdn.modrinth.com/data/cached_images/39d8c1b4d89d107bc12a0d4343629d451beb8e0d.png)
+
+</div>
+
 ## Features
 
 **1.** Players are marked as AFK --> displayed next to the name
@@ -29,12 +35,10 @@
 ## Config
 
 ```
-/trigger afkannouncer.config
+/trigger afk_announcer.config
 ```
 
 ## Config Pre 1.21.6
-
-`/reload` to load the datapack (must also be done when you have the mod installed)
 
 `/trigger afkannouncer.config`
 
@@ -354,7 +358,6 @@ value = color --> look at color table
 ![Jodek [AFK] is no longer AFK!](https://cdn.modrinth.com/data/cached_images/ec65120d4d5997cbe8608015afdd00b9ae4ea669.png)
 
 ![Shows in tab list](https://cdn.modrinth.com/data/cached_images/39d8c1b4d89d107bc12a0d4343629d451beb8e0d.png)
-
 
 
 ## Compatible with my [Show Dimension In Name ](https://modrinth.com/project/show-dimension-in-name) datapack/mod
