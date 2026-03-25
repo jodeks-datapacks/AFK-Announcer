@@ -18,12 +18,10 @@
   "version_type": "release",
   "dependencies": {
     "datapack": [
-      "modrinth:Lr1LVAwO(optional)",
-      "curseforge:1495266(optional)"
+      "5555ff-lib(optional){modrinth:Lr1LVAwO}{curseforge:1495266}"
     ],
     "mod": [
-      "modrinth:Lr1LVAwO(optional)",
-      "curseforge:1495273(optional)"
+      "5555ff-lib(optional){modrinth:Lr1LVAwO}{curseforge:1495273}"
     ]
   },
   "discord_role_id": "1252026374114246676"
