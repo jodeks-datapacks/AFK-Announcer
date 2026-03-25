@@ -16,7 +16,15 @@
     "26.1"
   ],
   "version_type": "release",
-  "dependencies_datapack": "modrinth:Lr1LVAwO(optional)|curseforge:1495266(optional)",
-  "dependencies_mod": "modrinth:Lr1LVAwO(optional)|curseforge:1495273(optional)",
+  "dependencies": {
+    "datapack": [
+      "modrinth:Lr1LVAwO(optional)",
+      "curseforge:1495266(optional)"
+    ],
+    "mod": [
+      "modrinth:Lr1LVAwO(optional)",
+      "curseforge:1495273(optional)"
+    ]
+  },
   "discord_role_id": "1252026374114246676"
 }
