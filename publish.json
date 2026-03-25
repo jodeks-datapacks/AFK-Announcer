@@ -12,9 +12,11 @@
     "1.21.8",
     "1.21.9",
     "1.21.10",
-    "1.21.11"
+    "1.21.11",
+    "26.1"
   ],
   "version_type": "release",
-  "dependencies": "",
+  "dependencies_datapack": "modrinth:Lr1LVAwO(optional)|curseforge:1495266(optional)",
+  "dependencies_mod": "modrinth:Lr1LVAwO(optional)|curseforge:1495273(optional)",
   "discord_role_id": "1252026374114246676"
 }

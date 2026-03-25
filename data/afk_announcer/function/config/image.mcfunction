@@ -9,7 +9,7 @@ function afk_announcer:image/set_image_data {\
     "#4f402b", "#453827", "#4f402b", "#cc9e72", "#cea37a", "#4c3d29", "#4f402b", "#453827",\
     "#cea37a", "#1f1200", "#cea37a", "#cea37a", "#cea37a", "#cea37a", "#1f1200", "#cea37a",\
     "#cc9e72", "#cea37a", "#cea37a", "#cca077", "#cca077", "#cea37a", "#cea37a", "#cea37a",\
-    "#c69363", "#cc9e72", "#cea37a", "#1f1200", "#1f1200", "#cea37a", "#cc9e72", "#c69363",\
+    "#c69363", "#cc9e72", "#cea37a", "#1f1200", "#1f1200", "#cea37a", "#cc9e72", "#c69363"\
   ],\
   background_color: "#303030",\
   description: [\

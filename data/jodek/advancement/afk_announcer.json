@@ -44,7 +44,8 @@
     ],
     "frame": "task",
     "show_toast": false,
-    "announce_to_chat": false
+    "announce_to_chat": false,
+    "hidden": true
   },
   "parent": "jodek:utility",
   "criteria": {

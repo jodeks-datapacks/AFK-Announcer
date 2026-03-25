@@ -1,11 +1,11 @@
 execute if score &afk_announcer_load_message jodek.config matches 1 run tellraw @a [\
-  "",\
   {\
     "text": "[",\
     "color": "#aaaaaa"\
   },\
   {\
     "text": "AFK Announcer",\
+    color: "#ffffff",\
     "hover_event": {\
       "action": "show_text",\
       "value": [\

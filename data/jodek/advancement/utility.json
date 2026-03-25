@@ -3,7 +3,7 @@
     "icon": {
       "id": "minecraft:command_block_minecart"
     },
-    "title": "Utility datapacks              ",
+    "title": "Utility              ",
     "description": [
       {
         "translate": "jodek.advancement.utility.description",
@@ -13,7 +13,8 @@
     ],
     "frame": "goal",
     "show_toast": false,
-    "announce_to_chat": false
+    "announce_to_chat": false,
+    "hidden": true
   },
   "parent": "jodek:root",
   "criteria": {
