@@ -24,3 +24,5 @@ jobs:
       targets: ${{ inputs.targets }}
     secrets:
       MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+    permissions:
+      contents: write
