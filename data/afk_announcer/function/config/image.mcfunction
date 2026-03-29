@@ -14,7 +14,7 @@ function afk_announcer:image/set_image_data {\
   background_color: "#303030",\
   description: [\
     {text: "AFK Announcer"},\
-    {translate: "afk_announcer.description", fallback: "Announces AFK players"},\
+    {translate: "afk_announcer.description", fallback: "Shows AFK players, /trigger afk, auto AFK kick & more"},\
     "",\
     [{translate: "jodek.datapack_version", fallback: "Datapack version: ", "color": "#00a800"}, {"text": "v4.0.2", "color": "#54fc54"}],\
     [{translate: "jodek.game_version", fallback: "Game version: ", "color": "#00a800"}, {"text": "1.21.6+", "color": "#54fc54"}],\

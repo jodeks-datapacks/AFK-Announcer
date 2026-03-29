@@ -7,7 +7,7 @@
     "description": [
       {
         "translate": "afk_announcer.description",
-        "fallback": "Announces AFK players",
+        "fallback": "Shows AFK players, /trigger afk, auto AFK kick & more",
         "color": "white"
       },
       {
