@@ -19,7 +19,7 @@ on:
 
 jobs:
   update:
-    uses: jodeks-datapacks/.github/.github/workflows/modrinth-update.yml@main
+    uses: jodeks-datapacks/.github/.github/workflows/metadata-update.yml@main
     with:
       targets: ${{ inputs.targets }}
     secrets:
